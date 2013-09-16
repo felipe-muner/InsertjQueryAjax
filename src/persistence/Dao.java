@@ -22,7 +22,9 @@ public class Dao {
 		}
 
 		String user = System.getenv().get("user_mysql");
+		user = (user != null) ? user : "teste";
 		String pass = System.getenv().get("pass_mysql");
+		pass = (pass != null) ? pass : "teste";
 
 		Class.forName("com.mysql.jdbc.Driver");
 		con = DriverManager.getConnection("jdbc:mysql://localhost:3306/ajax",
