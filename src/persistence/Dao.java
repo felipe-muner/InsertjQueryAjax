@@ -21,9 +21,12 @@ public class Dao {
 			firstTime = false;
 		}
 
+		String user = System.getenv().get("user_mysql");
+		String pass = System.getenv().get("pass_mysql");
+
 		Class.forName("com.mysql.jdbc.Driver");
 		con = DriverManager.getConnection("jdbc:mysql://localhost:3306/ajax",
-				"teste", "teste");
+				user, pass);
 	}
 
 	public void close() throws Exception {
